@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>🌦️ Modern Weather App</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Logo and Title -->
+    <header class="header">
+      
+      <h1>🌤️ Weather App</h1>
+      <p class="tagline">Your forecast, simplified & modern ⛅</p>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tab-container" role="tablist">
+      <p class="tab" role="tab" data-userWeather>📍 Your Weather</p>
+      <p class="tab" role="tab" data-searchWeather>🔍 Search Weather</p>
+    </nav>
+
+    <section class="weather-container">
+      <!-- Grant Location -->
+      <div class="sub-container grant-location-container" aria-hidden="true">
+        <img src="./assets/location.png" alt="Location Icon" width="80" height="80" loading="lazy" />
+        <p>📍 Grant Location Access</p>
+        <p>Allow access to get weather information based on your location</p>
+        <button class="btn" data-grantAccess>✅ Grant Access</button>
+      </div>
+
+      <!-- Search Form -->
+      <form class="form-container" data-searchForm role="search" aria-label="Search City Weather">
+        <input type="text" placeholder="🔎 Search for City..." aria-label="City Name" data-searchInput required />
+        <button class="btn" type="submit" aria-label="Search">
+          <img src="./assets/search.png" alt="Search Icon" width="20" height="20" loading="lazy" />
+        </button>
+      </form>
+
+      <!-- Loading State -->
+      <div class="sub-container loading-container" aria-hidden="true">
+        <img src="./assets/loading.gif" alt="Loading Spinner" width="150" height="150" />
+        <p>⏳ Loading...</p>
+      </div>
+
+      <!-- Weather Info -->
+      <div class="sub-container user-info-container" aria-hidden="true">
+        <div class="name">
+          <p data-cityName></p>
+          <img data-countryIcon alt="Country Flag" />
+        </div>
+
+        <p data-weatherDesc>🌈</p>
+        <img data-weatherIcon alt="Weather Icon" />
+        <p data-temp>🌡️</p>
+
+        <div class="parameter-container">
+          <div class="parameter">
+            <img src="./assets/wind.png" alt="Wind Icon" />
+            <p>💨 Wind Speed</p>
+            <p data-windspeed></p>
+          </div>
+          <div class="parameter">
+            <img src="./assets/humidity.png" alt="Humidity Icon" />
+            <p>💧 Humidity</p>
+            <p data-humidity></p>
+          </div>
+          <div class="parameter">
+            <img src="./assets/cloud.png" alt="Cloud Icon" />
+            <p>☁️ Cloudiness</p>
+            <p data-cloudiness></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>🧑‍💻 Designed & Built with ❤️ by <strong>Ajit Singh</strong> | © 2025</p>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="index.js"></script>
+</body>
+</html>
